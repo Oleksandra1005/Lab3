@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px 2rem;
+    gap: 2rem;
+}
+
+.basket {
+    background-color: white;
+    padding: .8rem;
+    border-radius: 10px;
+    flex-grow: 3;
+    min-width: 400px;
+}
+
+
+.input-container {
+    display: flex;
+    gap: .1rem;
+}
+
+.input {
+    padding: .5rem;
+    flex-grow: 2;
+    border: 1px solid lightgray;
+    outline: #474545;
+}
+
+.btn {
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+}
+
+.btn-add {
+    color: white;
+    background-color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    cursor: pointer;
+}
+
+.buy-list {
+    margin-top: 1rem;
+}
+
+.list-item {
+    padding: .6rem .1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    flex-grow: 1;
+}
+
+
+.title {
+    width: 100px;
+}
+
+.counter {
+    width: 100px;
+    display: flex;
+    gap: .5rem;
+}
+
+.amount {
+    background-color: lightgray;
+    padding: .3rem;
+    border-radius: 2px;
+}
+
+.minus, .plus {
+    color: white;
+    background-color: red;
+    padding: 0.3rem .6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.minus {
+    padding: .3rem .7rem;
+}
+
+.plus {
+    background-color: #44ee44;
+    position: relative;
+
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d62be2;
+    color: white;
+    padding: .4rem;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease, transform .5s ease-in-out, visibility .5s;
+    white-space: nowrap;
+    font-size: .6rem;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 100%;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+
+.del {
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    border: 2px solid red;
+    font-weight: bold;
+}
+
+.right {
+    min-width: 150px;
+    justify-self: flex-end;
+}
+
+.buy-btn {
+    min-width: 115px;
+}
+
+h3 {
+    margin: 0;
+}
+
+.statistic {
+    background-color: white;
+    min-height: 240px;
+    padding: .8rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    flex-grow: 2;
+    min-width: 400px;
+}
+
+.remained, .bought {
+    justify-content: flex-start;
+    gap: .2rem;
+}
+
+
+.disappear {
+    color: white;
+    background-color: white;
+    border: white;
+    cursor: initial;
+}
+
+.remained-item, .bought-item {
+    background-color: lightgray;
+    padding: .6rem;
+    border-radius: 5px;
+    font-size: .8rem;
+}
+
+.item-count {
+    margin-left: .1rem;
+    color: white;
+    background-color: orange;
+    padding: .2rem .4rem;
+    border-radius: 50%;
+}
+
+
+.badge {
+    position: fixed;
+    background-color: #d62be2;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    padding: .5rem;
+    left: 10px;
+    bottom: -50px;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: 1.5s;
+}
+
+.created-by {
+    text-align: center;
+    font-weight: normal;
+}
+
+.badge:hover {
+    transform: translateY(-50px);
+    background-color: #4b0c88;
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: initial;
+    opacity: .4;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
+
+.editable {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basket {
+        flex-grow: 0;
+    }
+
+    .statistic {
+        flex-grow: 0;
+    }
+}
